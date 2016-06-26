@@ -1,8 +1,18 @@
 Package: rempreq
 Type: Package
-Title: What the Package Does (Title Case)
+Title: rempreq: An R package for Estimating the Employment Impact of U.S.
+    Domestic Industry Production and Imports
 Version: 0.1.0
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Authors@R: person("Allan", "Miller", email = "allan.m.miller@gmail.com", role = c("aut", "cre"))
+Description: The package rempreq includes both the current and historic tables,
+    for total production and domestic production only. It also includes functions
+    for accessing any particular year (or years), selecting industries, and for
+    including domestic versus total output.
+Depends:
+  R (>= 3.1)
+Imports:
+  tidyr
+License: GPL-2
 LazyData: TRUE
+RoxygenNote: 5.0.1.9000
+
