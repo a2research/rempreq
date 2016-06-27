@@ -22,7 +22,7 @@ sector_description <- function(sector_number, sectors) {
 #' @examples
 #' table_by_year()
 #' table_by_year(1997, dom_table_list)
-table_by_year <- function(year = LATEST_YEAR, tablelist = dom_table_list) {
+  table_by_year <- function(year = LATEST_YEAR, tablelist = dom_table_list) {
   year_list <- tablelist[[as.character(year)]]
 }
 
@@ -83,7 +83,7 @@ series_by_sector_by_year <- function(sector_number, year = LATEST_YEAR, tablelis
 #' @param tablelist A \code{tablelist} for the domestic, imports, or total employment tables list.
 #' @return The number of employed for \code{prod_output_mm} dollars production of \code{sector_number} output, \code{year} and \code{tablelist}.
 #' @examples
-#' series_by_sector_by_year(27, 10.5, 1997, all_table_list)
+#' sector_emp_impact(27, 10.5, 1997, all_table_list)
 sector_emp_impact <- function(sector_number, prod_output_mm, year = LATEST_YEAR, tablelist = dom_table_list) {
   series_by_sector_by_year(sector_number, year, tablelist) * prod_output_mm
 }
@@ -99,7 +99,7 @@ sector_emp_impact <- function(sector_number, prod_output_mm, year = LATEST_YEAR,
 #' @param tablelist A \code{tablelist} for the domestic, imports, or total employment tables list.
 #' @return The total number of direct and indirect employed for \code{prod_output_mm} dollars production of \code{sector_number} output, \code{year} and \code{tablelist}.
 #' @examples
-#' series_by_sector_by_year(27, 10.5, 1997, all_table_list)
+#' emp_impact_all_sectors(27, 10.5, 1997, all_table_list)
 emp_impact_all_sectors <- function(sector_number, prod_output_mm, year = LATEST_YEAR, tablelist = dom_table_list) {
   sum(series_by_sector_by_year(sector_number, year, tablelist)) * prod_output_mm
 }
@@ -114,7 +114,7 @@ emp_impact_all_sectors <- function(sector_number, prod_output_mm, year = LATEST_
 #' @param tablelist A \code{tablelist} for the domestic, imports, or total employment tables list.
 #' @return The total number of direct employed for \code{prod_output_mm} dollars production of \code{sector_number} output, \code{year} and \code{tablelist}.
 #' @examples
-#' series_by_sector_by_year(27, 10.5, 1997, all_table_list)
+#' direct_emp_impact(27, 10.5, 1997, all_table_list)
 direct_emp_impact <- function(sector_number, prod_output_mm, year = LATEST_YEAR, tablelist = dom_table_list) {
   table_by_year(year, tablelist)[sector_number, sector_number + 1] * prod_output_mm
 }
@@ -128,7 +128,7 @@ direct_emp_impact <- function(sector_number, prod_output_mm, year = LATEST_YEAR,
 #' @param tablelist A \code{tablelist} for the domestic, imports, or total employment tables list.
 #' @return The total number of indirectly employed for \code{prod_output_mm} dollars production of \code{sector_number} output, \code{year} and \code{tablelist}.
 #' @examples
-#' series_by_sector_by_year(27, 10.5, 1997, all_table_list)
+#' indirect_emp_impact(27, 10.5, 1997, all_table_list)
 indirect_emp_impact <- function(sector_number, prod_output_mm, year = LATEST_YEAR, tablelist = dom_table_list) {
                                 emp_impact_all_sectors(sector_number,
                                 prod_output_mm, year, tablelist) - direct_emp_impact(sector_number, prod_output_mm, year, tablelist)
