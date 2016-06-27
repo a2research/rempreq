@@ -25,6 +25,6 @@ Returns the total number of jobs (domestic only) in all sectors that is generate
  $1 million of production of that sector (in 2009 dollars)
 }
 \examples{
-series_by_sector_by_year(27, 10.5, 1997, all_table_list)
+emp_impact_all_sectors(27, 10.5, 1997, all_table_list)
 }
 

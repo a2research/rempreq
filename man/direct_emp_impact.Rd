@@ -25,6 +25,6 @@ Returns the number of jobs (default: domestic only, current year) directly emplo
  $1 million of production of that sector (in 2009 dollars)
 }
 \examples{
-series_by_sector_by_year(27, 10.5, 1997, all_table_list)
+direct_emp_impact(27, 10.5, 1997, all_table_list)
 }
 

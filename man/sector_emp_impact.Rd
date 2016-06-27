@@ -23,6 +23,6 @@ The number of employed for \code{prod_output_mm} dollars production of \code{sec
 Return a vector of the number of jobs by all sectors for a given amount of production of a sector
 }
 \examples{
-series_by_sector_by_year(27, 10.5, 1997, all_table_list)
+sector_emp_impact(27, 10.5, 1997, all_table_list)
 }
 
