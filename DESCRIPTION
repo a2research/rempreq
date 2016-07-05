@@ -10,8 +10,6 @@ Description: The package rempreq includes both the current and historic tables,
     including domestic versus total output.
 Depends:
   R (>= 3.1)
-Imports:
-  tidyr
 License: GPL-2
 LazyData: TRUE
 RoxygenNote: 5.0.1.9000
